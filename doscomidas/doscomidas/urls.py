@@ -17,16 +17,30 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from catalog.router import router_catalog
+from credential.router import router_credential
+from delivery_in_place.router import router_delivery_in_place
+from delivery.router import router_delivery
+from dish.router import router_dish
 from location.router import router_location
+from order.router import router_order
+from restaurant.router import router_restaurant
 from rol.router import router_rol
 from user.router import router_user
-from credential.router import router_credential
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     # api urls
-    path('api/', include(router_location)),
-    path('api/', include(router_rol)),
+    path('api/', include(router_catalog)),
     path('api/', include(router_credential)),
+    path('api/', include(router_delivery)),
+    path('api/', include(router_delivery_in_place)),
+    path('api/', include(router_dish)),
+    path('api/', include(router_location)),
+    path('api/', include(router_order)),
+    path('api/', include(router_restaurant)),
+    path('api/', include(router_rol)),
+    path('api/', include(router_user)),
 ]

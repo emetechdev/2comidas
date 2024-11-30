@@ -42,10 +42,16 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # Own apps
+    'catalog',
+    'credential',
+    'delivery',
+    'delivery_in_place',
+    'dish',
     'location',
+    'order',
+    'restaurant',
     'rol',
     'user',
-    'credential'
 ]
 
 MIDDLEWARE = [
