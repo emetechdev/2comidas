@@ -20,6 +20,7 @@ from django.urls import path, include
 from location.router import router_location
 from rol.router import router_rol
 from user.router import router_user
+from credential.router import router_credential
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +28,5 @@ urlpatterns = [
     # api urls
     path('api/', include(router_location)),
     path('api/', include(router_rol)),
-    path('api/', include(router_user)),
+    path('api/', include(router_credential)),
 ]

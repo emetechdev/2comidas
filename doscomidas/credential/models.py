@@ -1,8 +1,7 @@
 from django.db import models
 
 
-
-class Credential(models.Model):
+class Credential_Model(models.Model):
     pk_credential = models.AutoField(primary_key=True)
     
     dni = models.CharField('DNI', max_length=8)

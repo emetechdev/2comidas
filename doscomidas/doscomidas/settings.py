@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     # Own apps
     'location',
     'rol',
-    'user'
+    'user',
+    'credential'
 ]
 
 MIDDLEWARE = [
