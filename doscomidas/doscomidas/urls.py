@@ -17,8 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from location.router import router_location
+from rol.router import router_rol
+from user.router import router_user
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('api/user/', include('rest_framework.urls'))
+    # api urls
+    path('api/', include(router_location)),
+    path('api/', include(router_rol)),
+    path('api/', include(router_user)),
 ]

@@ -1,6 +1,6 @@
 from django.db import models
 
-class Location(models.Model):
+class Location_Model(models.Model):
     """Location model. """
     pk_location = models.AutoField(primary_key=True)
     

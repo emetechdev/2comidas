@@ -1,5 +1,7 @@
 from django.db import models
 
+
+
 class Credential(models.Model):
     pk_credential = models.AutoField(primary_key=True)
     

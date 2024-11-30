@@ -1,6 +1,6 @@
 from django.db import models
 
-class Rol(models.Model):
+class Rol_Model(models.Model):
     pk_rol = models.AutoField(primary_key=True)
     
     name = models.CharField('Nombre rol', max_length=30)

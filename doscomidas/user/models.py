@@ -1,19 +1,19 @@
 from django.db import models
 
-from ..ubicacion.models import Location
-from ..rol.models import Rol
-from ..credenciales.models import Credential
+from location.models import Location_Model
+from rol.models import Rol_Model
 
-class User(models.Model):
+class User_Model(models.Model):
     """User model."""
     pk_user = models.AutoField(primary_key=True)
-    fk_location = models.ForeignKey(Location, on_delete=models.CASCADE)
-    fk_rol = models.ForeignKey(Rol, on_delete=models.CASCADE)
-    fk_credential = models.ForeignKey(Credential, on_delete=models.CASCADE)
+    #fk_location = models.ForeignKey(Location_Model, on_delete=models.DO_NOTHING)
+    #fk_rol = models.ForeignKey(Rol_Model, on_delete=models.DO_NOTHING)
     
     names = models.CharField('Nombres', max_length=50)
     last_name = models.CharField('Apellidos', max_length=50)
+    # dni sin puntos
     dni = models.CharField('DNI', max_length=8)
+    # Formato YYYY-MM-DD
     birthdate = models.DateField(help_text='Fecha nacimiento')
     email = models.CharField('Email', max_length=50)
 
