@@ -1,12 +1,12 @@
 from django.db import models
 
-#from ..dish.models import Dish
-#from ..restaurant.models import Restaurant
+from dish.models import Dish_Model
+from restaurant.models import Restaurant_Model
 
 class Order_Model(models.Model):
     pk_order = models.AutoField(primary_key=True)
-    #fk_dish = models.ForeignKey(Dish, on_delete=models.CASCADE)
-    #fk_restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    fk_dish = models.ForeignKey(Dish_Model, on_delete=models.CASCADE)
+    fk_restaurant = models.ForeignKey(Restaurant_Model, on_delete=models.CASCADE)
 
     order_number = models.CharField('Nro. Pedido', max_length=30)
     dish_name = models.CharField('Razon social', max_length=50)

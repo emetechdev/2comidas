@@ -8,6 +8,8 @@ class SaveDish_Serializer(serializers.ModelSerializer):
         model = Dish_Model
         # Campos disponibles para el insert (BD)
         fields = [
+            "fk_restaurant",
+
             "name",
             "calories",
             "description",

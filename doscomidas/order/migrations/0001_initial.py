@@ -15,11 +15,14 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Catalog_Model',
+            name='Order_Model',
             fields=[
-                ('pk_catalog', models.AutoField(primary_key=True, serialize=False)),
-                ('restaurant_name', models.CharField(max_length=50, verbose_name='Nombre restaurante')),
-                ('dish_name', models.CharField(max_length=50, verbose_name='Nombre plato')),
+                ('pk_order', models.AutoField(primary_key=True, serialize=False)),
+                ('order_number', models.CharField(max_length=30, verbose_name='Nro. Pedido')),
+                ('dish_name', models.CharField(max_length=50, verbose_name='Razon social')),
+                ('quota_abailable', models.IntegerField(help_text='Cupo disponible')),
+                ('qualification', models.IntegerField(help_text='Calificacion')),
+                ('dispatch', models.CharField(max_length=100, verbose_name='Despacho (envio/entrega)')),
                 ('fk_dish', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dish.dish_model')),
                 ('fk_restaurant', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='restaurant.restaurant_model')),
             ],

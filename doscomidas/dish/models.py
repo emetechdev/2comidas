@@ -1,7 +1,10 @@
 from django.db import models
 
+from restaurant.models import Restaurant_Model
+
 class Dish_Model(models.Model):
     pk_dish = models.AutoField(primary_key=True)
+    fk_restaurant = models.ForeignKey(Restaurant_Model, on_delete=models.CASCADE)
     
     name = models.CharField('Nombre', max_length=30)
     calories = models.CharField('Calorias', max_length=15)

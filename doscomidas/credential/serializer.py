@@ -8,6 +8,8 @@ class SaveCredential_Serializer(serializers.ModelSerializer):
         model = Credential_Model
         # Campos disponibles para el insert (BD)
         fields = [
+            "fk_user",
+
             "dni",
             "email",
             "password",

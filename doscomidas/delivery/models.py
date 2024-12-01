@@ -1,13 +1,13 @@
 from django.db import models
 
-# from ..usuario.models import User
-# from ..order.models import Order
+from user.models import User_Model
+from order.models import Order_Model
 
 class Delivery_Model(models.Model):
     """Delivery model."""
     pk_delivery = models.AutoField(primary_key=True)
-    #fk_user = models.ForeignKey(User, on_delete=models.CASCADE)
-    #fk_order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    fk_user = models.ForeignKey(User_Model, on_delete=models.RESTRICT)
+    fk_order = models.ForeignKey(Order_Model, on_delete=models.RESTRICT)
     
     order_number = models.CharField('Nro. Pedido', max_length=30)
     restaurant_name = models.CharField('Nombre restaurante', max_length=50)
