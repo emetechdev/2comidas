@@ -6,6 +6,7 @@ from rol.models import Rol_Model
 class User_Model(models.Model):
     """User model."""
     pk_user = models.AutoField(primary_key=True)
+    # fix - falta validacion. eliminar la locacion al eliminar al usuario
     fk_location = models.ForeignKey(Location_Model, on_delete=models.RESTRICT)
     fk_rol = models.ForeignKey(Rol_Model, on_delete=models.RESTRICT)
     

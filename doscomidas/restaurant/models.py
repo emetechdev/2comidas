@@ -5,6 +5,7 @@ from user.models import User_Model
 
 class Restaurant_Model(models.Model):
     pk_restaurant= models.AutoField(primary_key=True)
+    # fix - falta validacion. eliminar la locacion al eliminar al restaurant
     fk_location = models.ForeignKey(Location_Model, on_delete=models.RESTRICT)
     fk_responsible_user_id = models.ForeignKey(User_Model, on_delete=models.RESTRICT)
 
